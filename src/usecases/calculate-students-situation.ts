@@ -1,4 +1,5 @@
 import { GoogleSheetsApiAuth } from "../config/google-sheets-api-auth";
+import { StudentInformations } from "../domain/student-informations";
 import { GetStudentsInformation } from "./get-student-information";
 import "dotenv/config";
 
@@ -8,24 +9,24 @@ export class StudentsSituation {
     private readonly studentsInformation: GetStudentsInformation
   ) {}
 
-  async calculateSituation(): Promise<string[]> {
-    const situations: string[] = [];
-
+  async calculateSituation(): Promise<StudentInformations[]> {
     const totalClassesSemester: number = await this.getTotalClassesSemester();
 
     const studentsInfo = await this.studentsInformation.getStudentInformation();
 
     for (const student of studentsInfo) {
       if (student.getAverageGrade() < 5 || student.abscence > totalClassesSemester * 0.25) {
-        situations.push(situation.disapproved);
+        student.setSituation(situation.disapproved);
       } else if (student.getAverageGrade() < 7) {
-        situations.push(situation.final);
+        student.setSituation(situation.final);
       } else if (student.getAverageGrade() >= 7) {
-        situations.push(situation.approved);
+        student.setSituation(situation.approved);
       }
     }
 
-    return situations;
+    console.info("Calculating students situations...");
+
+    return studentsInfo;
   }
 
   private async getTotalClassesSemester(): Promise<number> {

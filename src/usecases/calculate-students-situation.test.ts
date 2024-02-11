@@ -8,11 +8,11 @@ const sut = new StudentsSituation(googleSheetsApiAuth, getStudentsInformation);
 
 describe("Students Situation Test", () => {
   test("Should return the correct situation for each student", async () => {
-    const situations = await sut.calculateSituation();
+    const students = await sut.calculateSituation();
 
-    expect(situations.length).toEqual(24);
-    expect(situations[0]).toEqual(situation.final);
-    expect(situations[1]).toEqual(situation.final);
-    expect(situations[2]).toEqual(situation.disapproved);
+    expect(students.length).toEqual(24);
+    expect(students[0].getSituation()).toEqual(situation.final);
+    expect(students[1].getSituation()).toEqual(situation.final);
+    expect(students[2].getSituation()).toEqual(situation.disapproved);
   });
 });

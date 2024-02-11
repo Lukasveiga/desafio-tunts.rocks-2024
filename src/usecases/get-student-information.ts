@@ -31,7 +31,7 @@ export class GetStudentsInformation {
       );
     }
 
-    console.info("Getting students informations from google sheet");
+    console.info("Getting students informations from google sheet...");
 
     students.sort((a, b) => a.registrationNumber - b.registrationNumber);
 
