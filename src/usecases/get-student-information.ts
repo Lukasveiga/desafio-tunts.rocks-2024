@@ -16,7 +16,7 @@ export class GetStudentsInformation {
 
     const rows = sheetData.data.values;
 
-    const studentsInfo = rows != null ? rows.slice(3) : [];
+    const studentsInfo = rows ? rows.slice(3) : [];
 
     const students: StudentInformations[] = [];
 
@@ -32,6 +32,8 @@ export class GetStudentsInformation {
     }
 
     console.info("Getting students informations from google sheet");
+
+    students.sort((a, b) => a.registrationNumber - b.registrationNumber);
 
     return students;
   }
