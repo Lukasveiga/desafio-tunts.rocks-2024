@@ -18,6 +18,8 @@ export class StudentInformations {
       total += grade;
     }
 
-    return Math.round(total / this.grades.length);
+    const result = total / 10 / this.grades.length;
+
+    return Math.round(result * 10) / 10;
   }
 }
