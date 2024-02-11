@@ -1,4 +1,4 @@
-import "dotenv/config.js";
+import "dotenv/config";
 import { GoogleSheetsApiAuth } from "./google-sheets-api-auth";
 
 const sut = new GoogleSheetsApiAuth();

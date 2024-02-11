@@ -1,6 +1,7 @@
 import { GoogleSheetsApiAuth } from "./../config/google-sheets-api-auth";
 import { StudentInformations } from "../domain/student-informations";
 import "dotenv/config";
+import { EmptyRowsException } from "./errors/empty-rows-error";
 
 export class GetStudentsInformation {
   constructor(private readonly googleSheetsApiAuth: GoogleSheetsApiAuth) {}
@@ -17,6 +18,10 @@ export class GetStudentsInformation {
     const rows = sheetData.data.values;
 
     const studentsInfo = rows ? rows.slice(3) : [];
+
+    if (studentsInfo.length == 0) {
+      throw new EmptyRowsException("Unable to access google spreadsheet data");
+    }
 
     const students: StudentInformations[] = [];
 
