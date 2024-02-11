@@ -15,7 +15,9 @@ export class StudentsSituation {
     const studentsInfo = await this.studentsInformation.getStudentInformation();
 
     for (const student of studentsInfo) {
-      if (student.getAverageGrade() < 5 || student.abscence > totalClassesSemester * 0.25) {
+      if (student.abscence > totalClassesSemester * 0.25) {
+        student.setSituation(situation.abscence);
+      } else if (student.getAverageGrade() < 5) {
         student.setSituation(situation.disapproved);
       } else if (student.getAverageGrade() < 7) {
         student.setSituation(situation.final);
@@ -50,4 +52,5 @@ export enum situation {
   disapproved = "Reprovado por Nota",
   approved = "Aprovado",
   final = "Exame Final",
+  abscence = "Reprovado por falta",
 }

@@ -13,6 +13,6 @@ describe("Students Situation Test", () => {
     expect(students.length).toEqual(24);
     expect(students[0].getSituation()).toEqual(situation.final);
     expect(students[1].getSituation()).toEqual(situation.final);
-    expect(students[2].getSituation()).toEqual(situation.disapproved);
+    expect(students[2].getSituation()).toEqual(situation.abscence);
   });
 });
