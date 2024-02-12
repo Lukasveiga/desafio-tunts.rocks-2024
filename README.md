@@ -53,7 +53,7 @@ where:
 
 <ul>
     <li>m -> Average grade</li>
-    <li>naf -> Necessary final passing grade (FPG)</li>
+    <li>fpg -> Necessary final passing grade (FPG)</li>
 </ul>
 
 <br>
@@ -72,7 +72,7 @@ For this project is necessary to provide two main informations. First is the <b>
 
 #### 2. Google Sheets API credentials:
 
-1. Within the Google [Cloud console](https://console.cloud.google.com), it is necessary to create a project for the application or use an existing one;
+1. Within the [Google Cloud console](https://console.cloud.google.com), it is necessary to create a project for the application or use an existing one;
 
 2. After creating the project, it is necessary to access the Google API Library, search for the [Google Sheets API](https://console.cloud.google.com/apis/library/sheets.googleapis.com), add it to the project, and enable it;
 
