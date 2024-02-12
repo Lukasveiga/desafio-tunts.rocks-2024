@@ -59,3 +59,62 @@ where:
 <br>
 
 ### Project Information:
+
+<p align="justify">
+For this project is necessary to provide two main informations. First is the <b>google sheet ID</b> and the second is the <b>Google Sheets API credentials</b>.
+</p>
+
+#### 1. Google Sheet ID:
+
+- Public link: https://docs.google.com/spreadsheets/d/1FF5QsQkqcwn8ZOIWslmhyuqm_uIz89QIvT-ObqDWCJc/edit?usp=sharing
+
+- The sheet id can be found between the backslashes in the sheet link. In this example: 1FF5QsQkqcwn8ZOIWslmhyuqm_uIz89QIvT-ObqDWCJc
+
+#### 2. Google Sheets API credentials:
+
+1. Within the Google [Cloud console](https://console.cloud.google.com), it is necessary to create a project for the application or use an existing one;
+
+2. After creating the project, it is necessary to access the Google API Library, search for the [Google Sheets API](https://console.cloud.google.com/apis/library/sheets.googleapis.com), add it to the project, and enable it;
+
+3. Create credentials by providing the necessary information for the project;
+
+4. A service account email will be created, so it will be necessary to copy this email and insert it into the sharing configuration in the Google Sheet that will be used, in order to grant access to the application's functionalities;
+
+5. Within the settings of service account, there will be an option to create keys, select the JSON option, which will be the credential file required for use in the project.
+
+- The credentials will be downloaded automatically and you will need to paste them into the project root.
+
+<p align="justify">
+<i>Obs: Always remember to insert sensitive data into the .gitignore list so that it is not exposed on the internet.</i>
+</p>
+
+### How to Install and Run the Project?
+
+- Add the JSON file with the credentials named as follows: "credentials.json" in the root of the project and insert the table ID into the environment variables file ".env" under the key SPREAD_SHEET_ID, as demonstrated below:
+
+.env:
+
+```
+SPREAD_SHEET_ID=1FF5QsQkqcwn8ZOIWslmhyuqm_uIz89QIvT-ObqDWCJc
+SHEET_NAME=engenharia_de_software
+```
+
+- In the terminal, run the following command to install all necessary project dependencies:
+
+```console
+npm install
+```
+
+- To run the tests, run the command below:
+
+```console
+npm test
+```
+
+- And finally, to run the program, run the following command:
+
+```console
+npm run start
+```
+
+And check if the changes were made successfully in the table.
