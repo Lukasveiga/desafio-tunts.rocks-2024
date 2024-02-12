@@ -118,3 +118,18 @@ npm run start
 ```
 
 And check if the changes were made successfully in the table.
+
+<hr>
+
+#### If you have any questions or ideas to improve the project, feel free to get in touch!
+
+<hr>
+
+#### Lukas Veiga
+
+Backend Web Developer | Java | Spring Boot | Javascript | Typescript | Express <br>
+Future Systems Analyst and Developer
+
+[Twitter](https://twitter.com/lukasveig) [Linkedin](https://www.linkedin.com/in/lukas-veiga/)
+
+Email: lukas.veiga10@gmail.com
